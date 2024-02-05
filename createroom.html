@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a room</title>
+  <link rel="stylesheet" href="stylecreateroom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sixtyfour">
+</head>
+<body>
+	<div class="input-name">
+		<h1 class="user-header">Username</h1>
+		<input type="text" class="user-input">
+	</div>
+	<div class="create-password">
+	<button class="create-password" onclick="zufall()">Generate password
+	<script>
+	function zufall()
+	{
+	var zahl = Math.round(Math.random() * 1000000);
+	alert(zahl);
+	}
+	</script>
+	</button>
+	</div>
+</body>
+</html>
