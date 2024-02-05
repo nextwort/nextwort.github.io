@@ -116,3 +116,10 @@ body {
 .main-div {
 
 }
+
+.no-backend-error {
+  color: rgba(157, 96, 212, 1);
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
