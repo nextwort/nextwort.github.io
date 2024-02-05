@@ -81,6 +81,10 @@ html, body {
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
 }
 
+.chats {
+  margin-bottom: 25%;
+}
+
 /* messages */
 .message {
   width: 45%;
