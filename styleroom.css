@@ -1,0 +1,61 @@
+*{
+  transition: transform 0.5s ease;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #030013;
+	}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+}
+.create-room {
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 100px;
+  color: white;
+  background-color: transparent;
+  box-shadow: 0 0 10px 5px #22c29d;
+  border: solid 3px transparent;
+  font-weight: bold;
+  margin: 10px;
+  transition: background-color 0.15s ease;
+}
+
+.create-room:active {
+  background-color: #22c29d;
+}
+
+.create-room:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.join-room {
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 100px;
+  color: white;
+  background-color: transparent;
+  box-shadow: 0 0 10px 5px #22c29d;
+  border: solid 3px transparent;
+  font-weight: bold;
+  margin: 10px;
+  transition: background-color 0.15s ease;
+}
+
+.join-room:active {
+  background-color: #22c29d;
+}
+
+.join-room:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+}
+
