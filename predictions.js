@@ -63,6 +63,10 @@ function showNextWords(data) {
     for (let i = 0; i < predWords.length; i++) {
         predWords[i].textContent = data[i][0];
     }
+    // clear teh unset predWords
+    for (let i = data.length; i < predWords.length; i++) {
+        predWords[i].textContent = "";
+    }
 }
 
 function setShowBackendError(show){
