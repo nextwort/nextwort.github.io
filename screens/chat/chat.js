@@ -1,3 +1,5 @@
+const user = window.location.search.replace("?u=","")
+
 function addMessage(username, messageText, isIncoming) {
     // Construct the message HTML
     var messageHTML = `
@@ -34,13 +36,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
   messageInput.addEventListener('keyup', function (e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
-      websocketClient.send(messageInput.value)
+      data = {
+        "user": user,
+        "content": messageInput.value
+      }
+      websocketClient.send(JSON.stringify(data))
       messageInput.value = ''
     }
   });
   
   websocketClient.onmessage = function(message) {
-    addMessage("noone",message.data, false)
+    data = JSON.parse(message.data)
+    
+    addMessage(data["user"], data["content"], data["user"] != user)
   };
   
   }, false);
