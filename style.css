@@ -148,7 +148,6 @@ body {
   background-color: rgba(157, 96, 212, 0.1);
   color: white;
   border: none;
-  box-shadow: 0 0 20px 5px rgba(157, 96, 212, 0.7);
   transition: box-shadow 0.25s ease;
 }
 
@@ -171,4 +170,24 @@ body {
   justify-content: center; 
   margin-left: auto;
   margin-right: auto;
+}
+
+.model-dropdown-inactive {
+  box-shadow: 0 0 20px 5px rgba(157, 96, 212, 0.7);
+}
+
+@keyframes breathing {
+  0% {
+    box-shadow: 0 0 5px 5px #22c29d;
+  }
+  50% {
+    box-shadow: 0 0 10px 10px #22c29d;
+  }
+  100% {
+    box-shadow: 0 0 5px 5px #22c29d;
+  }
+}
+
+.model-dropdown-active {
+  animation: breathing 2s infinite;
 }

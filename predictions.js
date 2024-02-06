@@ -80,6 +80,7 @@ function showNextWords(data) {
         predWords[i].textContent = "";
     }
     console.log(data.model_type);
+    setActiveModel(data.model_type);
 }
 
 function setErrorMessage(errorMessage){
@@ -92,5 +93,25 @@ function setErrorMessage(errorMessage){
         
         // Set text
         error_msg.textContent = errorMessage;
+    }
+    setActiveModel(null);
+}
+
+function setActiveModel(model) {
+    // Remove the classes
+    next_word_model_dropdown.classList.remove("model-dropdown-inactive");
+    next_word_model_dropdown.classList.remove("model-dropdown-active");
+
+    word_comp_model_dropdown.classList.remove("model-dropdown-inactive");
+    word_comp_model_dropdown.classList.remove("model-dropdown-active");
+
+    if (model == "next_word") {
+        // Set for next word
+        next_word_model_dropdown.classList.add("model-dropdown-active");
+        word_comp_model_dropdown.classList.add("model-dropdown-inactive");
+    } else if (model == "word_comp") {
+        // Set for next word
+        next_word_model_dropdown.classList.add("model-dropdown-inactive");
+        word_comp_model_dropdown.classList.add("model-dropdown-active");
     }
 }
