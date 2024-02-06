@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>context_as_text_v3</title>
+  <link rel="stylesheet" href="context_as_text_v3.css">
+</head>
+<body>
+  <header>
+    <h1 class="model-header">context_as_text_v3</h1>
+  </header>
+  <div class="main-div">
+    <p>This is the most advanced model because it uses a real neural network.</p>
+    <p>In the next sections we'll go over the steps that we used to create this model.</p>
+    <h2>Proprocessing the data</h2>
+    <p>
+      The first step in any machine learning project is to preprocess the data. In our case we're using the
+      <a href="https://huggingface.co/datasets/daily_dialog">daily_dialog</a> dataset which contains over 10.000 different
+      dialogs.
+    </p>
+    <p>
+      We preprocessed this data by removing punctuation and cleaning all whitespaces.
+    </p>
+    <p>
+      The model should be able to make the best predictions possible out of the context. This is why we combined each
+      messages from one dialog into one large string, effectively merging all messages in the same dialog.
+    </p>
+    
+    <h2>Creating X and y</h2>
+    <p>
+      Machine learning models are always trained to predict some result y from some input X. For training we also need them.
+      For context_as_text_v3 we started by splitting each dialog so that each sequence consists of the last words
+      preceding a target word, followed by the target word itself. This is done by iterating through the text forward.
+      The result looks like this:
+    </p>
+    <p>
+      X: [] y: [Say] <br>
+      X: [Say] y: [Jim] <br>
+      X: [Say, Jim] y: [how] <br>
+      X: [Say, Jim, how] y: [about] <br>
+      X: [Say, Jim, how, about] y: [going] <br>
+      X: [Say, Jim, how, about, going] y: [for] <br>
+      X: [Say, Jim, how, about, going, for] y: [a] <br>
+      X: [Say, Jim, how, about, going, for, a] y: [few] <br>
+      X: [Say, Jim, how, about, going, for, a, few] y: [beers] <br>
+      X: [Say, Jim, how, about, going, for, a, few, beers] y: [after] <br>
+      X: [Say, Jim, how, about, going, for, a, few, beers, after] y: [dinner] <br>
+    </p>
+    <p>
+      The only problem left is that the used algorithms can't handle strings (=words) which means we had to convert them into numbers.
+    </p>
+    <p>
+      But how do you convert words to numbers?
+      Well, that's actually quite easy. We used a so called tokenizer which goes through all sentences and assign one number to each
+      word. This might result in something like this: 0 -> Say, 1 -> Jim, 2 -> how, 3 -> about, etc.
+    </p>
+
+    <h2>Creating the model</h2>
+    <p>
+      Our neural network architecture consists of an embedding layer, followed by two bidirectional LSTM layers,
+      which are a type of recurrent neural network (RNN) capable of capturing sequence information in both forward and backward
+      directions. Finally, we have a dense layer with a softmax activation function to output the probability distribution
+      over the vocabulary for the next word prediction.
+    </p>
+    <p>
+      This means the output has one number for each possible next word representing the probability of that word beeing next.
+    </p>
+
+    <h2>Training</h2>
+    <p>
+      With out model architecture defined, we compiled it with the Adam optimizer.
+    </p>
+    <p>
+      During training all the internal weights of the model were updated to give us the best possible predictions.
+      This took about 2,5 hours.
+    </p>
+
+    <h2>Predicting</h2>
+    <p>
+      Now that the model trained, we were able to use it to generate those awesome predictions you can see on this site.
+    </p>
+
+
+  </div>
+</body>
+</html>
