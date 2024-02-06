@@ -95,12 +95,12 @@ html, body {
 
 .in-msg {
   /* background-color: rgba(157, 96, 212, 0.7); */
-  box-shadow: 0 0 15px 10px rgba(157, 96, 212, 0.7);
+  /* box-shadow: 0 0 15px 10px rgba(157, 96, 212, 0.7); */
   margin-left: 2%;
 }
 
 .out-msg {
-  box-shadow: 0 0 15px 10px #22c29d;
+  /* box-shadow: 0 0 15px 10px #22c29d; */
   margin-right: 2%;
   margin-left: auto
 }
