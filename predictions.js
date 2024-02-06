@@ -72,11 +72,11 @@ function showNextWords(data) {
         return
     }
 
-    for (let i = 0; i < predWords.length; i++) {
+    for (let i = 0; i < data.words.length; i++) {
         predWords[i].textContent = data.words[i][0];
     }
     // clear teh unset predWords
-    for (let i = data.length; i < predWords.length; i++) {
+    for (let i = data.words.length; i < predWords.length; i++) {
         predWords[i].textContent = "";
     }
     console.log(data.model_type);
