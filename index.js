@@ -9,7 +9,7 @@ async function populateModelDropdown() {
         });
         
     const data = await response.json();
-      const dropdown = document.getElementById('modelDropdown');
+      const dropdown = document.getElementById('next-word-model-dropdown');
       
       // Clear the dropdown before adding the new model names
       dropdown.innerHTML = '';
