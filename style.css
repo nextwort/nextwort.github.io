@@ -203,3 +203,11 @@ body {
 .info-button:hover {
   transform: scale(1.1);
 }
+
+.emotion {
+  color: rgba(157, 96, 212, 1);
+  font-size: 2vw;
+  margin-top: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
