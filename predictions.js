@@ -1,3 +1,12 @@
+const next_word_model_dropdown = document.querySelector(".model-dropdown");
+next_word_model_dropdown.addEventListener('change', async function() {
+    const currentText = inputElement.value;
+    let data = await getNextWords(currentText);
+    showNextWords(data);
+});
+
+
+
 const pred_words = document.querySelectorAll(".pred-word");
 const no_backend_error = document.querySelector(".no-backend-error");
 setShowBackendError(true);
@@ -14,14 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function getNextWords(text) {
+    let model_name = next_word_model_dropdown.value;
     try {
-        const response = await fetch('http://localhost:13232/predict', {
+        const response = await fetch('http://localhost:13232/predict_next_word', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ msg: text }), // Make sure the body matches your server's expected format
+            body: JSON.stringify({
+                text: text,
+                prev_messages: [],
+                model_name: model_name
+            }), // Make sure the body matches your server's expected format
         });
+        console.log("got answer");
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -46,7 +61,7 @@ function showNextWords(data) {
     // return lenght of predWords
     // console.log(predWords);
     for (let i = 0; i < predWords.length; i++) {
-        predWords[i].textContent = data[`word${i+1}`][0];
+        predWords[i].textContent = data[i][0];
     }
 }
 

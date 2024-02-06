@@ -123,3 +123,22 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
+
+.model-dropdown-div {
+  margin-top: 30px;
+}
+
+.model-dropdown-description {
+  color: rgba(157, 96, 212, 1);
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  display: inline;
+}
+
+.model-dropdown {
+  display: inline;
+  color: rgba(157, 96, 212, 1);
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
