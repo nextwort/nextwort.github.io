@@ -109,7 +109,7 @@ function setActiveModel(model) {
         // Set for next word
         next_word_model_dropdown.classList.add("model-dropdown-active");
         word_comp_model_dropdown.classList.add("model-dropdown-inactive");
-    } else if (model == "word_comp") {
+    } else if (model == "complete_word") {
         // Set for next word
         next_word_model_dropdown.classList.add("model-dropdown-inactive");
         word_comp_model_dropdown.classList.add("model-dropdown-active");
