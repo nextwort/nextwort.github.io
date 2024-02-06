@@ -191,3 +191,15 @@ body {
 .model-dropdown-active {
   animation: breathing 2s infinite;
 }
+
+.info-button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: white;
+  transition: transform 0.5s ease;
+}
+
+.info-button:hover {
+  transform: scale(1.1);
+}
