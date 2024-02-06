@@ -117,11 +117,12 @@ body {
 
 }
 
-.no-backend-error {
+.error-msg {
   color: rgba(157, 96, 212, 1);
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
+  text-align: center;
 }
 
 .model-dropdown-div {
