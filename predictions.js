@@ -1,4 +1,5 @@
-const next_word_model_dropdown = document.querySelector(".model-dropdown");
+const next_word_model_dropdown = document.getElementById("next-word-model-dropdown");
+const word_comp_model_dropdown = document.getElementById("word-comp-model-dropdown");
 const pred_words = document.querySelectorAll(".pred-word");
 const pred_word_div = document.querySelector(".pred-words");
 const error_msg = document.querySelector(".error-msg");
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 async function getNextWords(text) {
-    let model_name = next_word_model_dropdown.value;
+    let next_word_model = next_word_model_dropdown.value;
+    let word_comp_model = word_comp_model_dropdown.value;
     try {
         const response = await fetch('http://localhost:13232/make_pred', {
             method: 'POST',
@@ -35,7 +37,8 @@ async function getNextWords(text) {
             body: JSON.stringify({
                 text: text,
                 prev_messages: [],
-                model_name: model_name
+                next_word_model: next_word_model,
+                word_comp_model: word_comp_model
             }), // Make sure the body matches your server's expected format
         });
         console.log("got answer");
@@ -62,13 +65,21 @@ const predWords = document.querySelectorAll(".pred-word");
 function showNextWords(data) {
     // return lenght of predWords
     console.log("got data: ", data);
+
+    // Show error if present
+    if ("error" in data) {
+        setErrorMessage(data.error);
+        return
+    }
+
     for (let i = 0; i < predWords.length; i++) {
-        predWords[i].textContent = data[i][0];
+        predWords[i].textContent = data.words[i][0];
     }
     // clear teh unset predWords
     for (let i = data.length; i < predWords.length; i++) {
         predWords[i].textContent = "";
     }
+    console.log(data.model_type);
 }
 
 function setErrorMessage(errorMessage){
