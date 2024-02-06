@@ -14,9 +14,19 @@ body {
   justify-content: flex-start;
 }
 
-p, h1, h2, h3 {
+p, h1 {
   color: white;
   font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 3vw;
+  text-decoration: underline;
+  margin-top: 5vw;
+  margin-bottom: 0px;
 }
 
 .model-header {
