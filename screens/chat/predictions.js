@@ -1,3 +1,5 @@
+const inputElement = document.querySelector('.nwp-input');
+
 async function populateModelDropdown(url, dropdownId) {
     try {
       const response = await fetch(url, {
@@ -148,3 +150,40 @@ function setActiveModel(model) {
         word_comp_model_dropdown.classList.add("model-dropdown-active");
     }
 }
+
+function applyPrediction(word) {
+    userInput = inputElement.value;
+    ends_with_space = userInput.endsWith(" ");
+    if (ends_with_space) {
+        userInput += word + " ";
+    } else {
+        // Replace word beginning with whole word
+        var words = userInput.trim().split(" ");
+        words.pop();
+        userInput = words.join(" ") + " " + word + " ";
+    }
+
+    // Update input
+    inputElement.value = userInput;
+
+    // Generate next prediction
+    getNextWords(userInput).then(data => {
+        showNextWords(data);
+    })
+
+    // Move cursors to end
+    inputElement.setSelectionRange(inputElement.value.length, inputElement.value.length);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all buttons with the class 'pred-word'
+    const predWordButtons = document.querySelectorAll('.pred-word');
+
+    // Attach a click event listener to each button
+    predWordButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Pass the button's text to the function
+            applyPrediction(button.textContent);
+        });
+    });
+});

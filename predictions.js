@@ -3,6 +3,7 @@ const word_comp_model_dropdown = document.getElementById("word-comp-model-dropdo
 const pred_words = document.querySelectorAll(".pred-word");
 const pred_word_div = document.querySelector(".pred-words");
 const error_msg = document.querySelector(".error-msg");
+const inputElement = document.querySelector('.nwp-input');
 setErrorMessage("Could not connect to backend");
 
 
@@ -14,8 +15,6 @@ next_word_model_dropdown.addEventListener('change', async function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const inputElement = document.querySelector('.nwp-input');
-    
     inputElement.addEventListener('input', async function() {
         const currentText = inputElement.value;
         let data = await getNextWords(currentText);
@@ -115,3 +114,40 @@ function setActiveModel(model) {
         word_comp_model_dropdown.classList.add("model-dropdown-active");
     }
 }
+
+function applyPrediction(word) {
+    userInput = inputElement.value;
+    ends_with_space = userInput.endsWith(" ");
+    if (ends_with_space) {
+        userInput += word + " ";
+    } else {
+        // Replace word beginning with whole word
+        var words = userInput.trim().split(" ");
+        words.pop();
+        userInput = words.join(" ") + " " + word + " ";
+    }
+
+    // Update input
+    inputElement.value = userInput;
+
+    // Generate next prediction
+    getNextWords(userInput).then(data => {
+        showNextWords(data);
+    })
+
+    // Move cursors to end
+    inputElement.setSelectionRange(inputElement.value.length, inputElement.value.length);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all buttons with the class 'pred-word'
+    const predWordButtons = document.querySelectorAll('.pred-word');
+
+    // Attach a click event listener to each button
+    predWordButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Pass the button's text to the function
+            applyPrediction(button.textContent);
+        });
+    });
+});
