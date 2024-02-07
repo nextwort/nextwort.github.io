@@ -2,7 +2,7 @@ let color = "000000"
 const colorButtons = document.querySelectorAll(".color")
 
 function joinRoom() {
-    const room = document.querySelector(".user-input]").value.replace(" ", "")
+    const room = document.querySelector(".user-input").value.replace(" ", "")
     const name = document.querySelector(".user-name").value
     if (room && name) {
         window.location.replace("/frontend/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
