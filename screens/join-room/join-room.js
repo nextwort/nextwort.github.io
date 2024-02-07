@@ -43,7 +43,7 @@ function componentToHex(c) {
 }
 
 function rgbToHex(r, g, b) {
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    return componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 function rgbStringToHex(rgbString) {
     // Extract the integers from the rgb string using a regular expression.
