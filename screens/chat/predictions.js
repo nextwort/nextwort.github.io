@@ -69,7 +69,7 @@ async function getNextWords(text) {
             },
             body: JSON.stringify({
                 text: text,
-                prev_messages: [],
+                prev_messages: messages,
                 next_word_model: next_word_model,
                 word_comp_model: word_comp_model
             }), // Make sure the body matches your server's expected format

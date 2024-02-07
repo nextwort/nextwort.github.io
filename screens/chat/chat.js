@@ -2,7 +2,7 @@ let room
 let user_id
 let users = []
 
-let messages = []
+var messages = [];
 
 function addMessage(username, messageText, color, isIncoming) {
     // Construct the message HTML
