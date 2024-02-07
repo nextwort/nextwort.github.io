@@ -43,7 +43,7 @@ function getParam(param) {
   const rValue = urlParams.get(param);
   return rValue.toString();
 }
-  
+
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -81,42 +81,8 @@ document.addEventListener('DOMContentLoaded', function(){
     
   };
 
-  // Assuming messageInput and websocketClient are defined elsewhere in your code
-
-// Function to handle sending the message
-function sendMessage() {
-  // Check if message is empty
-  if (messageInput.value.trim() === '') {
-    console.log("Message is empty");
-    return;
-  }
-
-  // Construct the data object
-  let data = {
-    "type": "message",
-    "user": getParam("u"),
-    "content": messageInput.value
-  };
-
-  // Send the data via websocket client
-  websocketClient.send(JSON.stringify(data));
-
-  // Clear the message input
-  messageInput.value = '';
-}
-
-// Add event listener to the button with class "send"
-document.addEventListener('DOMContentLoaded', () => {
-  const sendButton = document.querySelector('.send');
-  sendButton.addEventListener('click', sendMessage);
-  // Add support for pressing Enter key to send the message
-  messageInput.addEventListener('keyup', function(e) {
-    if (e.key === 'Enter' || e.keyCode === 13) {
-      sendMessage();
-    }
-  });
-});
-
+  
+  
   websocketClient.onmessage = function(message) {
     data = JSON.parse(message.data)
     console.log("Packet received:")
