@@ -16,17 +16,37 @@
   <div class="bottom-area">
     <div class="input">
       <hr class="input-hr">
+      <p class="error-msg">Error</p>
       <div class="pred-words">
         <button class="pred-word">Word 1</button>
         <button class="pred-word">Word 2</button>
         <button class="pred-word">Word 3</button>
       </div>
       <div class="textbar">
-        <input type="text" class="input-box">
-        <button class="send">send</button>
+        <input type="text" class="nwp-input">
+        <button class="send">&#8593;</button>
+      </div>
+    </div>
+    <div class="config-area">
+    <button class="config-toggle-button" id="configToggleButton">Show config ▼</button>
+      <div id="config-div">
+        <div class="model-dropdown-div">
+          <div class="next-word-model-dropdown-div">
+            <p class="model-dropdown-description">Next Word Prediction Model:</p>
+            <select id="next-word-model-dropdown" class="model-dropdown model-dropdown-inactive">Dropdown</select>
+            <button class="info-button" id="next-word-info-button">ℹ️</button>
+          </div>
+          <div class="word-comp-model-dropdown-div">
+            <p class="model-dropdown-description">Word Completion Model:</p>
+            <select id="word-comp-model-dropdown" class="model-dropdown model-dropdown-inactive">Dropdown</select>
+            <button class="info-button" id="word-comp-info-button">ℹ️</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <script src="chat.js"></script>
+  <script src="predictions.js"></script>
+  <script src="config.js"></script>
 </body>
 </html>
