@@ -2,16 +2,20 @@ const roomIDP = document.querySelector(".room-id");
 const copyAndOpenButton = document.getElementById("copy-and-open");
 
 function getRoomID() {
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window.location.href);
     const rValue = urlParams.get('r'); // This is the room ID
     return rValue;
 }
 
-roomIDP.textContent = getRoomID().toString();
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Set the room id
+    roomIDP.textContent = getRoomID().toString();
+    // Check if the browser supports the Clipboard API and set the button text accordingly
+    if (!navigator.clipboard) {
+        copyAndOpenButton.textContent = "Open Room";
+    }
+});
 
-if (!navigator.clipboard) {
-    copyAndOpenButton.textContent = "Open Room";
-}
 
 copyAndOpenButton.addEventListener('click', () => {
     try {
