@@ -18,10 +18,18 @@ body {
   font-size: 5vw;
   text-shadow: 0 0 20px 5px rgba(107, 96, 117, 0.7);
   font-family: "Roboto", sans-serif;
+  margin-bottom: 0px;
 }
 .chat-header:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
+}
+
+.room-id {
+  text-align: center;
+  color: gray;
+  margin-top: 0px;
+  font-family: "Roboto", sans-serif;
 }
 
 
