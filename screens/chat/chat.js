@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const url_data_raw = window.location.search.replace("?","").split('&')
     console.log(url_data_raw)
 
-    if (url_data_raw.length == 1) {
+    if (url_data_raw.length == 2) {
       const data = {
         "type": "login",
         "uuid": getParam("u"),
