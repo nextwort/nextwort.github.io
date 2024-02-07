@@ -2,13 +2,13 @@ let color = "000000"
 const colorButtons = document.querySelectorAll(".color")
 
 function joinRoom() {
-    const room = Math.floor(Math.random() * 10000);
+    const room = document.querySelector(".user-input]").value.replace(" ", "")
     const name = document.querySelector(".user-name").value
     if (room && name) {
-        window.location.replace("/screens/show-room-id/show-room-id.html?n=" + name + "&c=" + color + "&r=" + room)
+        window.location.replace("/frontend/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
     }
     else {
-        alert("Please enter a name")
+        alert("Please enter a name and a room ID")
     }
 }
 
