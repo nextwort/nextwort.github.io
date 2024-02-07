@@ -83,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
   messageInput.addEventListener('keyup', function (e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
+      if (messageInput.value.replace(" ", "") == "") {
+        return
+      }
       data = {
         "type": "message",
         "user": getParam("u"),
