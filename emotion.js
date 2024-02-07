@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function getEmotion(text) {
     try {
-        const response = await fetch('http://141.78.137.157:13232/get_emotion', {
+        const response = await fetch('http://peak-var-oliver-encouraged.trycloudflare.com:443/get_emotion', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -24,5 +24,5 @@ async function populateModelDropdown(url, dropdownId) {
 }
 
 // Call the async function to populate the dropdown
-populateModelDropdown('http://141.78.137.157:13232/get_next_word_models', 'next-word-model-dropdown');
-populateModelDropdown('http://141.78.137.157:13232/get_complete_word_models', 'word-comp-model-dropdown');
+populateModelDropdown('http://peak-var-oliver-encouraged.trycloudflare.com:443/get_next_word_models', 'next-word-model-dropdown');
+populateModelDropdown('http://peak-var-oliver-encouraged.trycloudflare.com:443/get_complete_word_models', 'word-comp-model-dropdown');
