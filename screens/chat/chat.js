@@ -17,13 +17,10 @@ function addMessage(username, messageText, color, isIncoming) {
     window.scrollTo(0, document.body.scrollHeight);
   }
   
-// Example usage:
-addMessage('Naveen', 'Hello this is a test message', 0xFFFF00, true); // For outgoing messages
-addMessage('Sarah', 'Hey Naveen, got your message!', 0xAAFF00, false); // For incoming messages
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  const websocketClient = new WebSocket("ws://localhost:8765/");
+  const websocketClient = new WebSocket("ws://localhost:13261/");
   
   const messagesContainer = document.querySelector("#message_container");
   
@@ -58,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function(){
     data = JSON.parse(message.data)
     switch (data["type"]) {
       case "message":
-        addMessage(users[data["user"]]["name"], data["content"], users[data["user"]]["name"], data["user"] != user)
+        addMessage(data["name"], data["content"], data["color"], data["user"] != user)
       
       case "join":
         users[data["id"]] = data["content"]
