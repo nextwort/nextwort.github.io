@@ -1,7 +1,7 @@
 let color = "000000"
 const colorButtons = document.querySelectorAll(".color")
 
-function newRoom() {
+function joinRoom() {
     const room = Math.floor(Math.random() * 10000);
     const name = document.querySelector(".user-name").value
     if (room && name) {
