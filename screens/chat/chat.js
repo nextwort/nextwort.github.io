@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendButton = document.querySelector('.send');
   sendButton.addEventListener('click', sendMessage);
   // Optionally, add support for pressing Enter key to send the message
-  messageInput.addEventListener('keypress', function(e) {
+  messageInput.addEventListener('keyup', function(e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
       sendMessage();
     }
