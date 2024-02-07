@@ -81,7 +81,11 @@ document.addEventListener('DOMContentLoaded', function(){
     
   };
 
-  messageInput.addEventListener('keyup', function (e) {
+  function sendMessage() {
+    if (messageInput.value.trim() === '') {
+      return
+    }
+    
     if (e.key === 'Enter' || e.keyCode === 13) {
       if (messageInput.value.replace(" ", "") == "") {
         return
@@ -94,7 +98,15 @@ document.addEventListener('DOMContentLoaded', function(){
       websocketClient.send(JSON.stringify(data))
       messageInput.value = ''
     }
+  }
+
+  messageInput.addEventListener('keyup', function (e) {
+    sendMessage()
   });
+
+  sendMessageButton.addEventListener('click', function (e) {
+    sendMessage()
+  })
   
   websocketClient.onmessage = function(message) {
     data = JSON.parse(message.data)
