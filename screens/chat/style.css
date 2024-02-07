@@ -8,11 +8,16 @@ html, body {
   background-color: #030013;
 }
 
+body {
+  padding-bottom: 40%;
+}
+
 .chat-header {
   text-align: center;
   color: white;
   font-size: 5vw;
-  text-shadow: 0 0 20px 5px rgba(157, 96, 212, 0.7);
+  text-shadow: 0 0 20px 5px rgba(107, 96, 117, 0.7);
+  font-family: "Roboto", sans-serif;
 }
 .chat-header:hover {
   transform: scale(1.1);
@@ -90,11 +95,11 @@ html, body {
   margin-top: 3%;
   margin-bottom: 2%;
 }
-.input-box {
+.nwp-input {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 70%;
   height: 50px;
   box-shadow: 0 0 20px 5px rgba(157, 96, 212, 0.7);
   border-radius: 20px;
@@ -104,9 +109,12 @@ html, body {
   color: white;
   padding-left: 10px;
   padding-right: 10px;
-    transition: box-shadow 0.25s ease;
-  }
-.input-box:focus {
+  transition: box-shadow 0.25s ease;
+  display: inline;
+  margin-right: 2%;
+}
+
+.nwp-input:focus {
   outline: none;
   box-shadow: 0 0 20px 15px rgba(157, 96, 212, 0.7);
 }
@@ -121,6 +129,9 @@ html, body {
   font-weight: bold;
   margin: 10px;
   transition: background-color 0.15s ease;
+  width: 6vw;
+  text-align: center;
+  padding: 0px;
 }
 
 .send:active {
@@ -135,7 +146,7 @@ html, body {
 
 
 .chats {
-  margin-bottom: 25%;
+  margin-bottom: 20%;
 }
 
 /* messages */
@@ -194,7 +205,9 @@ html, body {
   width: 100%;
   /* background-color: red; */
   bottom: 0px;
+  -webkit-backdrop-filter: blur(20px); /* Safari */
   backdrop-filter: blur(20px);
+  margin-bottom: 0px
 }
 
 
@@ -305,4 +318,77 @@ html, body {
   font-size: 20px;
   color: white;
   transition: transform 0.5s ease;
+}
+
+/* Responsiveness */
+
+/* Phones */
+@media (max-width: 1000px) {
+  .send {
+    width: 15vw;
+  }
+  .config-area {
+    margin-top: 10vw;
+  }
+  .message-user {
+    font-size: 8vw;
+  }
+  .message-text {
+    font-size: 5vw;
+  }
+  .message {
+    margin-bottom: 10vw;
+  }
+  .in-msg {
+    margin-left: 5vw;
+  }
+  .out-msg {
+    margin-right: 5vw;
+  }
+  .chat-header {
+    font-size: 12vw;
+  }
+  body {
+    padding-bottom: 100vw;
+  }
+}
+
+/* Wide screens */
+@media (min-width: 1500px) {
+  .message-user {
+    font-size: 1.5vw;
+  }
+  .message-text {
+    font-size: 0.8vw;
+  }
+  .message {
+    width: 30%;
+  }
+  .in-msg {
+    margin-left: 10%;
+  }
+  .out-msg {
+    margin-right: 10%;
+  }
+  .chat-header {
+    font-size: 3vw;
+  }
+  .pred-words {
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+  }
+  .input {
+    margin-top: 0px;
+  }
+  .textbar {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .config-area {
+    margin-top: 1%;
+    margin-bottom: 0px;
+  }
+  .input {
+    margin-bottom: 0px;
+  }
 }
