@@ -1,0 +1,60 @@
+*{
+  transition: transform 0.5s ease;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #030013;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+}
+
+.room-id-header {
+  text-align: center;
+  color: #22c29d;
+  font-size: 4vw;
+  text-shadow: 0 0 40px #22c29d;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.room-id {
+  text-align: center;
+  color: white;
+  font-size: 10vw;
+  text-shadow: 0 0 40px #22c29d;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.copy-and-open {
+  border-radius: 10px;
+  border-width: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  color: white;
+  background-color: transparent;
+  box-shadow: 0 0 15px 5px #22c29d;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4vw;
+}
+
+.copy-and-open:hover {
+  transform: scale(1.05);
+}
+
+.copy-and-open:active {
+  background-color: #22c29d;
+}
