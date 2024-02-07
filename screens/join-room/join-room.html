@@ -8,9 +8,14 @@
   <script>
 	let color = "000000"
 	function joinRoom() {
-		const room = document.querySelector("[class=user-input]").value
+		const room = document.querySelector("[class=user-input]").value.replace(" ", "")
 		const name = document.querySelector("[class=user-name]").value
-		window.location.replace("/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
+		if (room && name) {
+			window.location.replace("/frontend/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
+		}
+		else {
+			alert("Please enter a name and a room ID")
+		}
 	}
   </script>
 </head>
