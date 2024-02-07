@@ -85,7 +85,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: white;
+  color: #ffffff;
   background-color: white;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -105,7 +105,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: yellow;
+  color: #ffff00;
   background-color: yellow;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -125,7 +125,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: orange;
+  color: #ffa500;
   background-color: orange;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -145,7 +145,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: red;
+  color: #ff0000;
   background-color: red;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -165,7 +165,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: lime;
+  color: #00ff00;
   background-color: lime;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -185,7 +185,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: green;
+  color: #008000;
   background-color: green;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -205,7 +205,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: pink;
+  color: #ffc0cb;
   background-color: pink;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -225,7 +225,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: blue;
+  color: #0000ff;
   background-color: blue;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -245,7 +245,7 @@ body {
  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: purple;
+  color: #800080;
   background-color: purple;
   box-shadow: 0 0 10px 5px rgba(157, 96, 212, 0.7);
   border: solid 3px transparent;
@@ -261,7 +261,7 @@ body {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
-.create-password {
+.create-room {
   border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
@@ -274,12 +274,11 @@ body {
   transition: background-color 0.15s ease;
 }
 
-.create-password:active {
+.create-room:active {
   background-color: #22c29d;
 }
 
-.create-password:hover {
+.create-room:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
-}
 }

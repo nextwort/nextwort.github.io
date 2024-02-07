@@ -1,3 +1,4 @@
+let room
 let user_id
 let users = []
 
@@ -34,7 +35,7 @@ function addJoinMessage(userName) {
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  const websocketClient = new WebSocket("ws://localhost:13261/");
+  const websocketClient = new WebSocket("ws://100.82.101.252:13261/");
   
   const messagesContainer = document.querySelector("#message_container");
   
@@ -60,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function(){
       const data = {
         "type": "auth",
         "name": url_data_raw[0].replace("n=",""),
-        "color": url_data_raw[1].replace("c=", "")
+        "color": url_data_raw[1].replace("c=", ""),
+        "room": url_data_raw[2].replace("r=")
       }
       websocketClient.send(JSON.stringify(data))
     }
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function(){
       case "auth":
         user = data["uuid"]
         console.log("Auth packet received, UUID is", user)
-        //window.location.search = "?u=" + user'
+        window.location.search = "?u=" + user
         break
 
     }

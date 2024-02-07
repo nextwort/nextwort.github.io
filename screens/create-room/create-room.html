@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html ="en">
+<html="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create a room</title>
   <link rel="stylesheet" href="stylecreateroom.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sixtyfour">
+  <script>
+	let color = "000000"
+	function newRoom() {
+		const room = Math.floor(Math.random() * 10000);
+		const name = document.querySelector("[class=user-input]").value
+		window.location.search = "?n=" + name + "&c=" + color + "&r=" + room
+		window.location.pathname = "screens/chat/chat.html"
+	}
+  </script>
 </head>
 <body>
 	<div class="input-name">
@@ -13,30 +21,23 @@
 		<input type="text" class="user-input">
 		<h2 class="color">Choose Color</h2>
 		<div class="user-color">
-			<button class="color1">ㅤㅤㅤ</button>
-			<button class="color2">ㅤㅤㅤ</button>
-			<button class="color3">ㅤㅤㅤ</button>
+			<button class="color1" onclick="color = 'FFFFFF'">ㅤㅤㅤ</button>
+			<button class="color2" onclick="color = 'FFFF00'">ㅤㅤㅤ</button>
+			<button class="color3" onclick="color = 'FFA500'">ㅤㅤㅤ</button>
 		</div>
 		<div class="user-color">
-			<button class="color4">ㅤㅤㅤ</button>
-			<button class="color5">ㅤㅤㅤ</button>
-			<button class="color6">ㅤㅤㅤ</button>
+			<button class="color4" onclick="color = 'FF0000'">ㅤㅤㅤ</button>
+			<button class="color5" onclick="color = '00FF00'">ㅤㅤㅤ</button>
+			<button class="color6" onclick="color = '008000'">ㅤㅤㅤ</button>
 		</div>
 		<div class="user-color">
-			<button class="color7">ㅤㅤㅤ</button>
-			<button class="color8">ㅤㅤㅤ</button>
-			<button class="color9">ㅤㅤㅤ</button>
+			<button class="color7" onclick="color = 'FFC0CB'">ㅤㅤㅤ</button>
+			<button class="color8" onclick="color = '0000FF'">ㅤㅤㅤ</button>
+			<button class="color9" onclick="color = '800080'">ㅤㅤㅤ</button>
 		</div>
 	</div>
-	<div class="create-password">
-	<button class="create-password" onclick="zufall()">Generate password
-	<script>
-	function zufall()
-	{
-	var zahl = Math.round(Math.random() * 1000000);
-	alert(zahl);
-	}
-	</script>
+	<div>
+	<button class="create-room" onclick="newRoom()">Create Room
 	</button>
 	</div>
 </body>
