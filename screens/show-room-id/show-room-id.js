@@ -9,13 +9,21 @@ function getRoomID() {
 
 roomIDP.textContent = getRoomID().toString();
 
+if (!navigator.clipboard) {
+    copyAndOpenButton.textContent = "Open Room";
+}
+
 copyAndOpenButton.addEventListener('click', () => {
-    // Copy the room ID to the clipboard
-    navigator.clipboard.writeText(getRoomID()).then(() => {
-        console.log('Room ID copied to clipboard');
-    }).catch(err => {
+    try {
+        // Copy the room ID to the clipboard
+        navigator.clipboard.writeText(getRoomID()).then(() => {
+            console.log('Room ID copied to clipboard');
+        }).catch(err => {
+            console.error('Failed to copy room ID: ', err);
+        });
+    } catch (err) {
         console.error('Failed to copy room ID: ', err);
-    });
+    }
 
     // Get the current page's query parameters
     const queryParams = window.location.search;
