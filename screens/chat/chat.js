@@ -47,7 +47,7 @@ function getParam(param) {
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  const websocketClient = new WebSocket("ws://localhost:13261/");
+  const websocketClient = new WebSocket("ws://chatserver.quantumflux.de:13261/");
   
   const messagesContainer = document.getElementById("message_container");
   
