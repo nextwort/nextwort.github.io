@@ -47,7 +47,7 @@ function getParam(param) {
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  const websocketClient = new WebSocket("ws://saved-guards-torture-scsi.trycloudflare.com:80/");
+  const websocketClient = new WebSocket("wss://saved-guards-torture-scsi.trycloudflare.com:443/");
   
   const messagesContainer = document.getElementById("message_container");
   
