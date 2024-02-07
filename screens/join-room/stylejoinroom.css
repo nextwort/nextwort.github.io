@@ -295,3 +295,25 @@ body {
   outline: none;
   box-shadow: 0 0 20px 15px rgba(157, 96, 212, 0.7);
 }
+
+.join-room {
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+  box-shadow: 0 0 10px 5px #22c29d;
+  border: solid 3px transparent;
+  font-weight: bold;
+  margin: 10px;
+  transition: background-color 0.15s ease;
+}
+
+.join-room:active {
+  background-color: #22c29d;
+}
+
+.join-room:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}

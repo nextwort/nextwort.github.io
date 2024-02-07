@@ -10,8 +10,7 @@
 	function newRoom() {
 		const room = Math.floor(Math.random() * 10000);
 		const name = document.querySelector("[class=user-input]").value
-		window.location.search = "?n=" + name + "&c=" + color + "&r=" + room
-		window.location.pathname = "screens/chat/chat.html"
+		window.location.replace("/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
 	}
   </script>
 </head>

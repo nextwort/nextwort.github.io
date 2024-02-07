@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join a room</title>
   <link rel="stylesheet" href="stylejoinroom.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sixtyfour">
+  <script>
+	let color = "000000"
+	function joinRoom() {
+		const room = document.querySelector("[class=user-input]").value
+		const name = document.querySelector("[class=user-name]").value
+		window.location.replace("/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
+	}
+  </script>
 </head>
 <body>
 	<div class="username">
@@ -13,24 +20,28 @@
 		<input type="text" class="user-name">
 		<h2 class="color">Choose Color</h2>
 		<div class="user-color">
-			<button class="color1">ㅤㅤㅤ</button>
-			<button class="color2">ㅤㅤㅤ</button>
-			<button class="color3">ㅤㅤㅤ</button>
+			<button class="color1" onclick="color = 'FFFFFF'">ㅤㅤㅤ</button>
+			<button class="color2" onclick="color = 'FFFF00'">ㅤㅤㅤ</button>
+			<button class="color3" onclick="color = 'FFA500'">ㅤㅤㅤ</button>
 		</div>
 		<div class="user-color">
-			<button class="color4">ㅤㅤㅤ</button>
-			<button class="color5">ㅤㅤㅤ</button>
-			<button class="color6">ㅤㅤㅤ</button>
+			<button class="color4" onclick="color = 'FF0000'">ㅤㅤㅤ</button>
+			<button class="color5" onclick="color = '00FF00'">ㅤㅤㅤ</button>
+			<button class="color6" onclick="color = '008000'">ㅤㅤㅤ</button>
 		</div>
 		<div class="user-color">
-			<button class="color7">ㅤㅤㅤ</button>
-			<button class="color8">ㅤㅤㅤ</button>
-			<button class="color9">ㅤㅤㅤ</button>
+			<button class="color7" onclick="color = 'FFC0CB'">ㅤㅤㅤ</button>
+			<button class="color8" onclick="color = '0000FF'">ㅤㅤㅤ</button>
+			<button class="color9" onclick="color = '800080'">ㅤㅤㅤ</button>
 		</div>
 	</div>
 	<div class="join-room">
-	<h1 class="user-header">Enter password to join room</h1>
+	<h1 class="user-header">Enter Room ID</h1>
 	<input type="text" class="user-input">
+	</div>
+	<div>
+		<button class="join-room" onclick="joinRoom()">Join Room
+		</button>
 	</div>
 </body>
 </html>
