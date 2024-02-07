@@ -31,12 +31,26 @@ document.addEventListener('DOMContentLoaded', function(){
   websocketClient.onopen = function() {
     console.log("Client connected!")
     const url_data_raw = window.location.search.replace("?","").split('&')
-    const data = {
-      "type": "auth",
-      "name": url_data_raw[0].replace("n=",""),
-      "color": url_data_raw[1].replace("c=", "")
+    console.log(url_data_raw)
+
+    if (url_data_raw.length == 1) {
+      user = url_data_raw[0].replace("u=", "")
+      const data = {
+        "type": "login",
+        "uuid": user,
+      }
+      websocketClient.send(JSON.stringify(data))
     }
-    websocketClient.send(JSON.stringify(data))
+
+    else {
+      const data = {
+        "type": "auth",
+        "name": url_data_raw[0].replace("n=",""),
+        "color": url_data_raw[1].replace("c=", "")
+      }
+      websocketClient.send(JSON.stringify(data))
+    }
+    
   };
 
   messageInput.addEventListener('keyup', function (e) {
@@ -53,16 +67,26 @@ document.addEventListener('DOMContentLoaded', function(){
   
   websocketClient.onmessage = function(message) {
     data = JSON.parse(message.data)
+    console.log("Packet received:")
+    console.log(data)
+    console.log()
     switch (data["type"]) {
       case "message":
+        console.log(user)
+        console.log(data["user"])
         addMessage(data["name"], data["content"], data["color"], data["user"] != user)
+        break
       
       case "join":
         users[data["id"]] = data["content"]
         console.log("Join packet received from UUID " + data["id"])
+        break
 
       case "auth":
         user = data["uuid"]
+        console.log("Auth packet received, UUID is", user)
+        //window.location.search = "?u=" + user'
+        break
 
     }
   };
