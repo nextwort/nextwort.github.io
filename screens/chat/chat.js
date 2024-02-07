@@ -85,9 +85,6 @@ document.addEventListener('DOMContentLoaded', function(){
     if (messageInput.value.trim() === '') {
       return
     }
-    if (messageInput.value.replace(" ", "") == "") {
-      return
-    }
     data = {
       "type": "message",
       "user": getParam("u"),
