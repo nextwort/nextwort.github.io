@@ -82,6 +82,10 @@ document.addEventListener('DOMContentLoaded', function(){
   };
 
   messageInput.addEventListener('keyup', function (e) {
+    // Check if message is empty
+    if (messageInput.value.trim() === '') {
+      return;
+    }
     if (e.key === 'Enter' || e.keyCode === 13) {
       data = {
         "type": "message",
