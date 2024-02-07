@@ -5,44 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create a room</title>
   <link rel="stylesheet" href="stylecreateroom.css">
-  <script>
-	let color = "000000"
-	function newRoom() {
-		const room = Math.floor(Math.random() * 10000);
-		const name = document.querySelector(".user-name").value
-		if (room && name) {
-			window.location.replace("/frontend/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
-		}
-		else {
-			alert("Please enter a name")
-		}
-	}
-  </script>
 </head>
 <body>
 	<div class="input-name">
 		<h1 class="user-header">Username</h1>
-		<input type="text" class="user-input">
-		<h2 class="color">Choose Color</h2>
+		<input type="text" class="user-name">
+		<h2 class="color-header">Choose A Color:</h2>
 		<div class="user-color">
-			<button class="color1" onclick="color = 'FFFFFF'">ㅤㅤㅤ</button>
-			<button class="color2" onclick="color = 'FFFF00'">ㅤㅤㅤ</button>
-			<button class="color3" onclick="color = 'FFA500'">ㅤㅤㅤ</button>
+			<button class="color" style="background-color: #FFFFFF"></button>
+			<button class="color" style="background-color: #FFFF00"></button>
+			<button class="color" style="background-color: #FFA500"></button>
 		</div>
 		<div class="user-color">
-			<button class="color4" onclick="color = 'FF0000'">ㅤㅤㅤ</button>
-			<button class="color5" onclick="color = '00FF00'">ㅤㅤㅤ</button>
-			<button class="color6" onclick="color = '008000'">ㅤㅤㅤ</button>
+			<button class="color" style="background-color: #FF0000"></button>
+			<button class="color" style="background-color: #00FF00"></button>
+			<button class="color" style="background-color: #008000"></button>
 		</div>
 		<div class="user-color">
-			<button class="color7" onclick="color = 'FFC0CB'">ㅤㅤㅤ</button>
-			<button class="color8" onclick="color = '0000FF'">ㅤㅤㅤ</button>
-			<button class="color9" onclick="color = '800080'">ㅤㅤㅤ</button>
+			<button class="color" style="background-color: #FFC0CB"></button>
+			<button class="color" style="background-color: #0000FF"></button>
+			<button class="color" style="background-color: #800080"></button>
 		</div>
 	</div>
 	<div>
 	<button class="create-room" onclick="newRoom()">Create Room
 	</button>
+	<script src="create-room.js"></script>
 	</div>
 </body>
 </html>
