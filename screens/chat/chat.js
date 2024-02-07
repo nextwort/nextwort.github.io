@@ -16,6 +16,16 @@ function addMessage(username, messageText, color, isIncoming) {
     // Scroll to the bottom of the chat container
     window.scrollTo(0, document.body.scrollHeight);
   }
+
+function addJoinMessage(userName) {
+  var joinHTML = "<p class='join-msg'>" + userName + " joined the room </p>"
+
+  var chatsContainer = document.querySelector('.chats');
+  chatsContainer.innerHTML += joinHTML;
+
+  window.scrollTo(0, document.body.scrollHeight);
+  
+}
   
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -80,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function(){
       case "join":
         users[data["id"]] = data["content"]
         console.log("Join packet received from UUID " + data["id"])
+        addJoinMessage(data["content"]["name"])
         break
 
       case "auth":
