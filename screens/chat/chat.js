@@ -20,6 +20,7 @@ function addMessage(username, messageText, color, isIncoming) {
     window.scrollTo(0, document.body.scrollHeight);
 
     messages.push(messageText);
+    updatePreds();
   }
 
 function addJoinMessage(userName) {
@@ -92,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     websocketClient.send(JSON.stringify(data))
     messageInput.value = ''
+    updatePreds();
   }
 
   messageInput.addEventListener('keyup', function (e) {

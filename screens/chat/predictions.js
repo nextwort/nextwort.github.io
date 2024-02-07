@@ -166,6 +166,10 @@ function applyPrediction(word) {
     // Update input
     inputElement.value = userInput;
 
+    updatePreds();
+}
+
+function updatePreds() {
     // Generate next prediction
     getNextWords(userInput).then(data => {
         showNextWords(data);
