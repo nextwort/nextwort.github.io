@@ -43,7 +43,7 @@ function getParam(param) {
   const rValue = urlParams.get(param);
   return rValue.toString();
 }
-
+  
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -81,7 +81,17 @@ document.addEventListener('DOMContentLoaded', function(){
     
   };
 
-  
+  messageInput.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      data = {
+        "type": "message",
+        "user": getParam("u"),
+        "content": messageInput.value
+      }
+      websocketClient.send(JSON.stringify(data))
+      messageInput.value = ''
+    }
+  });
   
   websocketClient.onmessage = function(message) {
     data = JSON.parse(message.data)
