@@ -1,6 +1,8 @@
 let user_id
 let users = []
 
+let messages = []
+
 function addMessage(username, messageText, color, isIncoming) {
     // Construct the message HTML
     var messageHTML = `
@@ -15,6 +17,8 @@ function addMessage(username, messageText, color, isIncoming) {
   
     // Scroll to the bottom of the chat container
     window.scrollTo(0, document.body.scrollHeight);
+
+    messages.push(messageText);
   }
 
 function addJoinMessage(userName) {
