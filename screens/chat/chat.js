@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function(){
       case "auth":
         user = data["uuid"]
         console.log("Auth packet received, UUID is", user)
-        window.location.search = "?u=" + user
+        window.location.search = "?u=" + user + "&r=" + getRoomID()
         break
 
     }
