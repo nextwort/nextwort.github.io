@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function getEmotion(text) {
     try {
-        const response = await fetch('https://peak-var-oliver-encouraged.trycloudflare.com:443/get_emotion', {
+        const response = await fetch('https://all-tell-skirt-gourmet.trycloudflare.com:443/get_emotion', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
