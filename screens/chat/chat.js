@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function sendMessage() {
   // Check if message is empty
   if (messageInput.value.trim() === '') {
+    console.log("Message is empty");
     return;
   }
 
@@ -108,7 +109,7 @@ function sendMessage() {
 document.addEventListener('DOMContentLoaded', () => {
   const sendButton = document.querySelector('.send');
   sendButton.addEventListener('click', sendMessage);
-  // Optionally, add support for pressing Enter key to send the message
+  // Add support for pressing Enter key to send the message
   messageInput.addEventListener('keyup', function(e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
       sendMessage();
