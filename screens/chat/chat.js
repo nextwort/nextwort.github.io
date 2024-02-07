@@ -31,17 +31,30 @@ function addJoinMessage(userName) {
   window.scrollTo(0, document.body.scrollHeight);
   
 }
+
+function getRoomID() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const rValue = urlParams.get('r'); // This is the room ID
+  return rValue;
+}
+
+function getParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const rValue = urlParams.get(param);
+  return rValue.toString();
+}
   
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  const websocketClient = new WebSocket("ws://100.82.101.252:13261/");
+  const websocketClient = new WebSocket("ws://localhost:13261/");
   
-  const messagesContainer = document.querySelector("#message_container");
+  const messagesContainer = document.getElementById("message_container");
   
-  const messageInput = document.querySelector("[class=input-box]");
+  const messageInput = document.querySelector(".nwp-input");
+  console.log(messageInput);
   
-  const sendMessageButton = document.querySelector("[class=send]")
+  const sendMessageButton = document.querySelector(".send")
   
   websocketClient.onopen = function() {
     console.log("Client connected!")
@@ -49,10 +62,9 @@ document.addEventListener('DOMContentLoaded', function(){
     console.log(url_data_raw)
 
     if (url_data_raw.length == 1) {
-      user = url_data_raw[0].replace("u=", "")
       const data = {
         "type": "login",
-        "uuid": user,
+        "uuid": getParam("u"),
       }
       websocketClient.send(JSON.stringify(data))
     }
@@ -60,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function(){
     else {
       const data = {
         "type": "auth",
-        "name": url_data_raw[0].replace("n=",""),
-        "color": url_data_raw[1].replace("c=", ""),
-        "room": url_data_raw[2].replace("r=")
+        "name": getParam("n"),
+        "color": getParam("c"),
+        "room": getRoomID().toString(),
       }
       websocketClient.send(JSON.stringify(data))
     }
@@ -73,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if (e.key === 'Enter' || e.keyCode === 13) {
       data = {
         "type": "message",
-        "user": user,
+        "user": getParam("u"),
         "content": messageInput.value
       }
       websocketClient.send(JSON.stringify(data))
@@ -88,9 +100,8 @@ document.addEventListener('DOMContentLoaded', function(){
     console.log()
     switch (data["type"]) {
       case "message":
-        console.log(user)
         console.log(data["user"])
-        addMessage(data["name"], data["content"], data["color"], data["user"] != user)
+        addMessage(data["name"], data["content"], data["color"], data["user"] != getParam("u"))
         break
       
       case "join":
