@@ -9,7 +9,7 @@
 	let color = "000000"
 	function newRoom() {
 		const room = Math.floor(Math.random() * 10000);
-		const name = document.querySelector("[class=user-name]").value
+		const name = document.querySelector(".user-name").value
 		if (room && name) {
 			window.location.replace("/frontend/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
 		}
