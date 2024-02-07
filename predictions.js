@@ -28,7 +28,7 @@ async function getNextWords(text) {
     let next_word_model = next_word_model_dropdown.value;
     let word_comp_model = word_comp_model_dropdown.value;
     try {
-        const response = await fetch('http://localhost:13232/make_pred', {
+        const response = await fetch('http://141.78.137.157:13232/make_pred', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

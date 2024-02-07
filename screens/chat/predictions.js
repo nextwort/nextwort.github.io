@@ -26,8 +26,8 @@ async function populateModelDropdown(url, dropdownId) {
 }
 
 // Call the async function to populate the dropdown
-populateModelDropdown('http://localhost:13232/get_next_word_models', 'next-word-model-dropdown');
-populateModelDropdown('http://localhost:13232/get_complete_word_models', 'word-comp-model-dropdown');
+populateModelDropdown('http://141.78.137.157:13232/get_next_word_models', 'next-word-model-dropdown');
+populateModelDropdown('http://141.78.137.157:13232/get_complete_word_models', 'word-comp-model-dropdown');
 
 
 
@@ -64,7 +64,7 @@ async function getNextWords(text) {
     let next_word_model = next_word_model_dropdown.value;
     let word_comp_model = word_comp_model_dropdown.value;
     try {
-        const response = await fetch('http://localhost:13232/make_pred', {
+        const response = await fetch('http://141.78.137.157:13232/make_pred', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
