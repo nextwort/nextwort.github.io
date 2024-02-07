@@ -56,7 +56,7 @@ document.getElementById('send-button').addEventListener('click', () => {
 // doesnt work too
 
 
-// const socket = io('http://localhost:8000');
+// const socket = io('https://localhost:8000');
 
 // // Event handler for receiving messages from the server
 // socket.on('message', (message) => {
