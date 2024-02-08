@@ -359,6 +359,9 @@ body {
   body {
     padding-bottom: 100vw;
   }
+  .join-msg {
+    font-size: 5vw;
+  }
 }
 
 /* Wide screens */
