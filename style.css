@@ -211,3 +211,13 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
+
+/* Responsiveness */
+
+/* Phones */
+@media (max-width: 1000px) {
+  .model-dropdown-description {
+    display: block;
+    text-align: center;
+  }
+}
