@@ -5,7 +5,7 @@ function joinRoom() {
     const room = document.querySelector(".user-input").value.replace(" ", "")
     const name = document.querySelector(".user-name").value
     if (room && name) {
-        window.location.replace("/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
+        window.location.replace("/frontend/screens/chat/chat.html?n=" + name + "&c=" + color + "&r=" + room)
     }
     else {
         alert("Please enter a name and a room ID")
