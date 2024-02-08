@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function getEmotion(text) {
     try {
-        const response = await fetch('http://localhost:13232/get_emotion', {
+        const response = await fetch('http://192.168.178.28:13232/get_emotion', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
