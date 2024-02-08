@@ -362,6 +362,9 @@ body {
   .join-msg {
     font-size: 5vw;
   }
+  .model-dropdown-description{
+    display: block;
+  }
 }
 
 /* Wide screens */
