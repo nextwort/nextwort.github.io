@@ -101,6 +101,11 @@ function showNextWords(data) {
     // return lenght of predWords
     console.log("got data: ", data);
 
+    if (data == null) {
+        setErrorMessage("Could not complete fetch");
+        return
+    }
+
     // Show error if present
     if ("error" in data) {
         setErrorMessage(data.error);
