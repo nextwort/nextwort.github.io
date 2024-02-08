@@ -33,5 +33,5 @@ copyAndOpenButton.addEventListener('click', () => {
     const queryParams = window.location.search;
 
     // Redirect to the new page with the same query parameters
-    window.location.replace(`/frontend/screens/chat/chat.html${queryParams}`);
+    window.location.replace(`/screens/chat/chat.html${queryParams}`);
 });

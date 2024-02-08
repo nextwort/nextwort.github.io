@@ -5,7 +5,7 @@ function newRoom() {
     const room = Math.floor(Math.random() * 10000);
     const name = document.querySelector(".user-name").value
     if (room && name) {
-        window.location.replace("/frontend/screens/show-room-id/show-room-id.html?n=" + name + "&c=" + color + "&r=" + room)
+        window.location.replace("/screens/show-room-id/show-room-id.html?n=" + name + "&c=" + color + "&r=" + room)
     }
     else {
         alert("Please enter a name")

@@ -123,6 +123,12 @@ function showNextWords(data) {
     setActiveModel(data.model_type);
 }
 
+function clearPredictions() {
+    for (let i = 0; i < predWords.length; i++) {
+        predWords[i].textContent = "";
+    }
+}
+
 function setErrorMessage(errorMessage){
     if (errorMessage == null) {
         error_msg.style.display = "none";
@@ -157,6 +163,7 @@ function setActiveModel(model) {
 }
 
 function applyPrediction(word) {
+    clearPredictions();
     userInput = inputElement.value;
     ends_with_space = userInput.endsWith(" ");
     if (ends_with_space) {
