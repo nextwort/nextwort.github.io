@@ -356,8 +356,8 @@ body {
   .chat-header {
     font-size: 12vw;
   }
-  body {
-    padding-bottom: 100vw;
+  .chats {
+    padding-bottom: 85%;
   }
   .join-msg {
     font-size: 5vw;
@@ -404,5 +404,8 @@ body {
   }
   .input {
     margin-bottom: 0px;
+  }
+  .body {
+    padding-bottom: 50%;
   }
 }
