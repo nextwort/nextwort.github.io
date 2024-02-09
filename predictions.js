@@ -28,7 +28,7 @@ async function getNextWords(text) {
     let next_word_model = next_word_model_dropdown.value;
     let word_comp_model = word_comp_model_dropdown.value;
     try {
-        const response = await fetch('https://harassment-britain-russia-impaired.trycloudflare.com:443/make_pred', {
+        const response = await fetch('https://tone-nasdaq-art-lc.trycloudflare.com:443/make_pred', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
