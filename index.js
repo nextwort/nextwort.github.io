@@ -24,5 +24,5 @@ async function populateModelDropdown(url, dropdownId) {
 }
 
 // Call the async function to populate the dropdown
-populateModelDropdown('https://tone-nasdaq-art-lc.trycloudflare.com:443/get_next_word_models', 'next-word-model-dropdown');
-populateModelDropdown('https://tone-nasdaq-art-lc.trycloudflare.com:443/get_complete_word_models', 'word-comp-model-dropdown');
+populateModelDropdown('https://actively-feat-makes-tm.trycloudflare.com:443/get_next_word_models', 'next-word-model-dropdown');
+populateModelDropdown('https://actively-feat-makes-tm.trycloudflare.com:443/get_complete_word_models', 'word-comp-model-dropdown');

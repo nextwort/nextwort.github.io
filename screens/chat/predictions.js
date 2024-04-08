@@ -26,8 +26,8 @@ async function populateModelDropdown(url, dropdownId) {
 }
 
 // Call the async function to populate the dropdown
-populateModelDropdown('https://tone-nasdaq-art-lc.trycloudflare.com:443/get_next_word_models', 'next-word-model-dropdown');
-populateModelDropdown('https://tone-nasdaq-art-lc.trycloudflare.com:443/get_complete_word_models', 'word-comp-model-dropdown');
+populateModelDropdown('https://actively-feat-makes-tm.trycloudflare.com:443/get_next_word_models', 'next-word-model-dropdown');
+populateModelDropdown('https://actively-feat-makes-tm.trycloudflare.com:443/get_complete_word_models', 'word-comp-model-dropdown');
 
 
 
@@ -64,7 +64,7 @@ async function getNextWords(text) {
     let next_word_model = next_word_model_dropdown.value;
     let word_comp_model = word_comp_model_dropdown.value;
     try {
-        const response = await fetch('https://tone-nasdaq-art-lc.trycloudflare.com:443/make_pred', {
+        const response = await fetch('https://actively-feat-makes-tm.trycloudflare.com:443/make_pred', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
